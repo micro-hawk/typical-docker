@@ -1,11 +1,12 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const router = require('./routes/index')
 
 const app = express()
 const appPort = 3000
 
 //Connections to Mongodb
-mongoose.connect('mongodb:localhost/', {
+mongoose.connect('mongodb://localhost/todo_db', {
     useNewUrlParser : true, 
     useUnifiedTopology : true
 })
@@ -16,6 +17,9 @@ app.use(express.static('public'))
 
 app.set('view engine', 'ejs')
 
+
+app.use('/', router)
+// app.use('/', router)
 
 //listen to port
 app.listen(appPort, ()=> {console.log(`Your app is running on server ${appPort}`)})
