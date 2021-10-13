@@ -6,7 +6,7 @@ const app = express()
 const appPort = 3000
 
 //Connections to Mongodb
-mongoose.connect('mongodb://localhost/todo_db', {
+mongoose.connect('mongodb://admin:password@localhost:27017/todo_db', {
     useNewUrlParser : true, 
     useUnifiedTopology : true
 })
