@@ -11,6 +11,11 @@ mongoose.connect('mongodb://admin:password@localhost:27017/todo_db', {
     useUnifiedTopology : true
 })
 
+// mongoose.connect('mongodb://localhost:27017/todo_db', {
+//     useNewUrlParser : true, 
+//     useUnifiedTopology : true
+// })
+
 //Middlewares
 app.use(express.urlencoded({extended : true}))
 app.use(express.static('public'))
